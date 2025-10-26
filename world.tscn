@@ -1,7 +1,7 @@
-[gd_scene load_steps=8 format=3 uid="uid://d0m1vm5ps1cbc"]
+[gd_scene load_steps=8 format=3 uid="uid://cnho7sngftoxj"]
 
-[ext_resource type="Script" uid="uid://m88oep58i88q" path="res://world.gd" id="1_f3sb7"]
-[ext_resource type="Script" uid="uid://d2t357lekvvfd" path="res://camera_3d.gd" id="2_fj7yv"]
+[ext_resource type="Script" path="res://world.gd" id="1_f3sb7"]
+[ext_resource type="Script" path="res://camera_3d.gd" id="2_fj7yv"]
 
 [sub_resource type="Gradient" id="Gradient_gv5m4"]
 offsets = PackedFloat32Array(0, 0.58666664, 1)

@@ -11,6 +11,6 @@ config_version=5
 [application]
 
 config/name="COMP360_ON1_A2"
-run/main_scene="uid://d0m1vm5ps1cbc"
+run/main_scene="uid://cnho7sngftoxj"
 config/features=PackedStringArray("4.5", "Forward Plus")
 config/icon="res://icon.svg"

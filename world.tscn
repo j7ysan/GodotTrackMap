@@ -1,7 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://cnho7sngftoxj"]
+[gd_scene load_steps=13 format=3 uid="uid://cnho7sngftoxj"]
 
 [ext_resource type="Script" path="res://world.gd" id="1_f3sb7"]
 [ext_resource type="Script" path="res://camera_3d.gd" id="2_fj7yv"]
+[ext_resource type="Texture2D" uid="uid://cuhh4k6a57iyq" path="res://road-texture.jpg" id="3_tlwt5"]
 
 [sub_resource type="Gradient" id="Gradient_gv5m4"]
 offsets = PackedFloat32Array(0, 0.58666664, 1)
@@ -43,6 +44,24 @@ sdfgi_use_occlusion = true
 glow_intensity = 6.39
 glow_hdr_threshold = 0.0
 
+[sub_resource type="PlaneMesh" id="PlaneMesh_fj7yv"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tlwt5"]
+diffuse_mode = 1
+albedo_color = Color(0.01135285, 0.011352819, 0.008513842, 1)
+
+[sub_resource type="Curve3D" id="Curve3D_fj7yv"]
+closed = true
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, -2.753006, 3.0517578e-05, -198.61746, -0.5243683, 0.015731812, -0.19747925, 0.5243683, -0.015731812, 0.19747925, -2.753006, 3.0517578e-05, -120.45654, 0, 0, 0, 0, 0, 0, -1.8978424, 3.0517578e-05, -44.499573, 0, 0, 0, 0, 0, 0, -2.7640228, 0.05015564, 68.78555, 0, 0, 0, 0, 0, 0, -1.770813, 0.0688324, 189.732),
+"tilts": PackedFloat32Array(0, 0, 0, 0, 0)
+}
+point_count = 5
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_aqk2v"]
+albedo_texture = ExtResource("3_tlwt5")
+uv1_scale = Vector3(0, 7, 0)
+
 [node name="World" type="Node3D"]
 script = ExtResource("1_f3sb7")
 
@@ -74,3 +93,29 @@ directional_shadow_blend_splits = true
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_fj7yv")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+transform = Transform3D(25, 0, 0, 0, 1, 0, 0, 0, 197, 249.85297, 101.3067, 251.62827)
+top_level = true
+mesh = SubResource("PlaneMesh_fj7yv")
+surface_material_override/0 = SubResource("StandardMaterial3D_tlwt5")
+
+[node name="Path3D" type="Path3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 250.4378, 105.82309, 254.59396)
+curve = SubResource("Curve3D_fj7yv")
+
+[node name="CSGPolygon3D" type="CSGPolygon3D" parent="Path3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -248.46011, -107.74036, -253.34836)
+polygon = PackedVector2Array(-20, 0, -1, 0.1, 1, 0.1, 1, 0)
+mode = 2
+path_node = NodePath("..")
+path_interval_type = 0
+path_interval = 1.0
+path_simplify_angle = 0.0
+path_rotation = 2
+path_rotation_accurate = false
+path_local = false
+path_continuous_u = true
+path_u_distance = 1.0
+path_joined = true
+material = SubResource("StandardMaterial3D_aqk2v")

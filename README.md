@@ -1,5 +1,5 @@
-# Group_2-Comp_360-Assignment_2
-Assignment 2 for COMP 360 from Group 2
+# GROUP 2 - COMP 360 - ON1 - ASSIGNMENT 2
+Assignment 2 for COMP 360 from Group 2.
 
 <br>
 

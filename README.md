@@ -19,6 +19,10 @@ a stock image. This texture could also be later replaced with a shader to utiliz
 
 ---------------------------------------------------------
 # Track Utilization:
+The track is used in a way so that the player is guided down a set path, one that is not too long and not too short.
+Along the track the transparent walls allow the player to look out onto the landscape whilst also performing the minigame
+at hand. During the minigame the track is used as a progression tool, with the individual node segments of the track acting as
+progress markers such as, 1 - 0%, 2 - 25%, 3 - 50%, 4 - 75%, 5 - 100%, and perfectly set up as to split it up in even segments.
 
 ---------------------------------------------------------
 # Car-Camera Creation:

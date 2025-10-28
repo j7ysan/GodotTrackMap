@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d0le4tjdwiqky"
-path="res://.godot/imported/nocolor_reference_map0.png-0d24a20c13d48d45d2d50a7a043b4446.ctex"
+uid="uid://d0qrtbugpom6c"
+path="res://.godot/imported/reference_map1.png-8b1cd13234374fd34352463f5f48cb91.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://nocolor_reference_map0.png"
-dest_files=["res://.godot/imported/nocolor_reference_map0.png-0d24a20c13d48d45d2d50a7a043b4446.ctex"]
+source_file="res://images/reference_map1.png"
+dest_files=["res://.godot/imported/reference_map1.png-8b1cd13234374fd34352463f5f48cb91.ctex"]
 
 [params]
 

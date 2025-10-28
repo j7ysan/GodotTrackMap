@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dsid78xyp6w77"
-path="res://.godot/imported/baking_map1.png-ec0cb2512fa32e90d124a693b13665e7.ctex"
+uid="uid://dti2jlqxva0p5"
+path="res://.godot/imported/no_light_reference1.png-dfad07f6dc1781dfefe22c15d87ffd2a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://baking_map1.png"
-dest_files=["res://.godot/imported/baking_map1.png-ec0cb2512fa32e90d124a693b13665e7.ctex"]
+source_file="res://images/no_light_reference1.png"
+dest_files=["res://.godot/imported/no_light_reference1.png-dfad07f6dc1781dfefe22c15d87ffd2a.ctex"]
 
 [params]
 

@@ -79,7 +79,7 @@ point_count = 12
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_71j4m"]
 transparency = 1
-albedo_color = Color(0.32941177, 0.32941177, 0.32941177, 0.25490198)
+albedo_color = Color(0.32941177, 0.32941177, 0.32941177, 0.11764706)
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_k0juu"]
 

@@ -5,6 +5,9 @@ extends VehicleBody3D
 @export var TURN_AMOUNT = 0.3
 @export var BRAKE_AMOUNT = 20
 
+var last_speed: float = 0.0
+@export var crash_shake_threshold: float = 12.0  # can be tunedd
+
 func _ready():
 	reset()
 
@@ -31,13 +34,28 @@ func _physics_process(delta):
 	else:
 		brake = 0.25
 		engine_force = 0
+	# crash and drifting camera shake
+	var current_speed = linear_velocity.length()
+
+	# Sudden speed drop cause of the crash
+	if last_speed - current_speed > crash_shake_threshold:
+		$CameraFollow.apply_shake(0.25)
+
+	# High angular velocity from drifting 
+	if abs(angular_velocity.y) > 2.5:
+		$CameraFollow.apply_shake(0.08)
+
+	last_speed = current_speed
 	
 	if position.y < 80:
 		reset()
 
+
 func reset():
 	rotation = Vector3.ZERO
 	position = Vector3(250,105,65)
+	linear_velocity = Vector3.ZERO
+	angular_velocity = Vector3.ZERO
 
 func _input(event):
 	if Input.is_action_just_pressed("ui_accept"):

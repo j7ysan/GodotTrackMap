@@ -130,6 +130,7 @@ scale_min = 0.5
 transparency = 1
 shading_mode = 0
 albedo_texture = ExtResource("5_71j4m")
+billboard_mode = 1
 billboard_keep_scale = true
 
 [sub_resource type="QuadMesh" id="QuadMesh_4mrxx"]
@@ -256,6 +257,7 @@ shape = SubResource("BoxShape3D_71j4m")
 
 [node name="RainParticles" type="GPUParticles3D" parent="."]
 transform = Transform3D(0.9986722, -0.03307447, 0.039504092, 0.03263997, 0.99940044, 0.011593692, -0.03986384, -0.010288893, 0.9991524, 254.21518, 158.7156, 164.16986)
+custom_aabb = AABB(-1000, -1000, -1000, 2000, 2000, 2000)
 amount = 1000
 lifetime = 3.0
 randomness = 0.87
@@ -266,6 +268,7 @@ draw_pass_1 = SubResource("RibbonTrailMesh_i7141")
 
 [node name="SnowParticles" type="GPUParticles3D" parent="."]
 transform = Transform3D(-0.9989355, -0.024141368, 0.039306387, -0.024571758, 0.99964285, -0.010503516, -0.039038785, -0.011458164, -0.99917215, 249.12372, 152.37956, 313.55695)
+custom_aabb = AABB(-1000, -1000, -1000, 2000, 2000, 2000)
 amount = 2000
 lifetime = 5.0
 process_material = SubResource("ParticleProcessMaterial_qfnet")

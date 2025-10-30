@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://cnho7sngftoxj"]
+[gd_scene load_steps=24 format=3 uid="uid://cnho7sngftoxj"]
 
 [ext_resource type="Script" uid="uid://m88oep58i88q" path="res://scripts/world.gd" id="1_f3sb7"]
 [ext_resource type="Script" uid="uid://d2t357lekvvfd" path="res://scripts/camera_3d.gd" id="2_fj7yv"]
@@ -44,6 +44,7 @@ ambient_light_color = Color(1, 1, 1, 1)
 sdfgi_use_occlusion = true
 glow_intensity = 6.39
 glow_hdr_threshold = 0.0
+fog_enabled = true
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_fj7yv"]
 
@@ -86,6 +87,33 @@ albedo_color = Color(0.32941177, 0.32941177, 0.32941177, 0.11764706)
 [sub_resource type="BoxShape3D" id="BoxShape3D_71j4m"]
 size = Vector3(1, 27.218872, 390.89642)
 
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_k0juu"]
+emission_shape = 3
+emission_box_extents = Vector3(50, 0.5, 100)
+direction = Vector3(0, -1, 0)
+spread = 5.0
+initial_velocity_min = 5.0
+initial_velocity_max = 5.0
+collision_mode = 1
+collision_friction = 0.0
+collision_bounce = 0.0
+
+[sub_resource type="Curve" id="Curve_71j4m"]
+_limits = [0.0, 0.1, 0.0, 1.0]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(1e-05, 0.1), 0.3624392, 0.3624392, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qfnet"]
+transparency = 1
+cull_mode = 2
+shading_mode = 0
+vertex_color_use_as_albedo = true
+use_particle_trails = true
+
+[sub_resource type="RibbonTrailMesh" id="RibbonTrailMesh_i7141"]
+material = SubResource("StandardMaterial3D_qfnet")
+curve = SubResource("Curve_71j4m")
+
 [node name="World" type="Node3D"]
 script = ExtResource("1_f3sb7")
 
@@ -97,6 +125,10 @@ texture = SubResource("NoiseTexture2D_tlwt5")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 material_overlay = SubResource("StandardMaterial3D_fj7yv")
+
+[node name="GPUParticlesCollisionBox3D" type="GPUParticlesCollisionBox3D" parent="MeshInstance3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 244.31209, 71.43969, 282.23148)
+size = Vector3(200, 200, 200)
 
 [node name="Marker3D" type="Marker3D" parent="."]
 transform = Transform3D(0.52398586, 0.85172695, 0, -0.85172695, 0.52398586, 0, 0, 0, 1, 0, 0, 0)
@@ -200,3 +232,14 @@ shape = SubResource("BoxShape3D_71j4m")
 [node name="CollisionShape3D4" type="CollisionShape3D" parent="StaticBody3D2"]
 transform = Transform3D(-0.007155759, 0, 0.99997437, 0, 1, 0, -0.99997437, 0, -0.007155759, 203.47473, 48.121292, 57.4462)
 shape = SubResource("BoxShape3D_71j4m")
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 254.21518, 130.97226, 216.7403)
+amount = 1000
+lifetime = 3.0
+randomness = 0.87
+visibility_aabb = AABB(-10, -20, -10, 20, 20, 20)
+trail_enabled = true
+trail_lifetime = 0.2
+process_material = SubResource("ParticleProcessMaterial_k0juu")
+draw_pass_1 = SubResource("RibbonTrailMesh_i7141")

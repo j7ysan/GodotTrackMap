@@ -34,7 +34,8 @@ progress markers such as, 1 - 0%, 2 - 25%, 3 - 50%, 4 - 75%, 5 - 100%, and perfe
 # Camera Adjustment:
 
 ---------------------------------------------------------
-# Features-1 Creation:
+# Feature-1 Creation: - Zoe Antonio
+The rain particle feature in was made using **GPUParticles3D** and **GPUParticlesCollision3DBox**. The GPUParticles3D node creates many small rain particles that fall from the sky, while the Collision3DBox determines how the rain interact with the ground. To make the rain look more realistic, I also added some by adjusting the 'WorldEnvironment'.
 
 ---------------------------------------------------------
 # Features-2 Creation:

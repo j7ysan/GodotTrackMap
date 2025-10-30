@@ -34,11 +34,12 @@ progress markers such as, 1 - 0%, 2 - 25%, 3 - 50%, 4 - 75%, 5 - 100%, and perfe
 # Camera Adjustment:
 
 ---------------------------------------------------------
-# Feature-1 Creation: - Zoe Antonio
+# Feature-1 Rain, Snow, and Fog: Zoe Antonio
 The rain and snow particle feature was made using **GPUParticles3D** and **GPUParticlesCollision3DBox**. I used 2 GPUParticles3D nodes that creates many small rain and snow particles that fall from the sky in certain parts of the track, while the Collision3DBox determines how the rain interact with the ground. To make the weather look more realistic, I also added some fog by adjusting the 'WorldEnvironment' node.
 
 ---------------------------------------------------------
-# Features-2 Creation:
+# Features-2 Coin Collection: Zoe Antonio
+Created the coin with an **Area3D** node with a 'MeshInstance3D', and 'CollisionShape3D'. The script attached to the Area3D node allows the coin to slowly spins around (rotates) every frame to make it look animated, and when the player touches the coin (the body enters the coin’s area), it: Adds 1 to the total number of coins stored in a global counter. Updates the coin counter label on the screen to show the new total. Disables collisions so it can’t be collected again and then Removes itself from the game (disappears).
 
 ---------------------------------------------------------
 # Any Additional Content:

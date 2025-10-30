@@ -1,10 +1,12 @@
-[gd_scene load_steps=28 format=3 uid="uid://cnho7sngftoxj"]
+[gd_scene load_steps=30 format=3 uid="uid://cnho7sngftoxj"]
 
 [ext_resource type="Script" uid="uid://m88oep58i88q" path="res://scripts/world.gd" id="1_f3sb7"]
 [ext_resource type="Script" uid="uid://d2t357lekvvfd" path="res://scripts/camera_3d.gd" id="2_fj7yv"]
 [ext_resource type="Texture2D" uid="uid://cj8n2wp85xdwo" path="res://resources/track_texture2.jpg" id="3_k0juu"]
 [ext_resource type="PackedScene" uid="uid://c8pmqaww7dn0k" path="res://scenes/vehicle.tscn" id="4_aqk2v"]
 [ext_resource type="Texture2D" uid="uid://cltvyp62qhwfv" path="res://resources/snowflake.png" id="5_71j4m"]
+[ext_resource type="PackedScene" uid="uid://ith22phhte41" path="res://scenes/coin.tscn" id="6_qfnet"]
+[ext_resource type="PackedScene" uid="uid://d3m0s1xfevnyb" path="res://scenes/coin_counter.tscn" id="7_i7141"]
 
 [sub_resource type="Gradient" id="Gradient_gv5m4"]
 offsets = PackedFloat32Array(0, 0.58666664, 1)
@@ -273,3 +275,127 @@ amount = 2000
 lifetime = 5.0
 process_material = SubResource("ParticleProcessMaterial_qfnet")
 draw_pass_1 = SubResource("QuadMesh_4mrxx")
+
+[node name="CoinsCounterDisplay" parent="." instance=ExtResource("7_i7141")]
+
+[node name="Coins" type="Node3D" parent="."]
+
+[node name="coin" parent="Coins" node_paths=PackedStringArray("coin_counter") instance=ExtResource("6_qfnet")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 246, 106, 209)
+coin_counter = NodePath("../../CoinsCounterDisplay")
+
+[node name="coin2" parent="Coins" node_paths=PackedStringArray("coin_counter") instance=ExtResource("6_qfnet")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 246, 106, 202.54994)
+coin_counter = NodePath("../../CoinsCounterDisplay")
+
+[node name="coin3" parent="Coins" node_paths=PackedStringArray("coin_counter") instance=ExtResource("6_qfnet")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 246, 106, 196.54994)
+coin_counter = NodePath("../../CoinsCounterDisplay")
+
+[node name="coin4" parent="Coins" node_paths=PackedStringArray("coin_counter") instance=ExtResource("6_qfnet")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 246, 106, 191.54994)
+coin_counter = NodePath("../../CoinsCounterDisplay")
+
+[node name="coin5" parent="Coins" node_paths=PackedStringArray("coin_counter") instance=ExtResource("6_qfnet")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 246, 106, 185.54994)
+coin_counter = NodePath("../../CoinsCounterDisplay")
+
+[node name="coin6" parent="Coins" node_paths=PackedStringArray("coin_counter") instance=ExtResource("6_qfnet")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 246, 106, 170.54994)
+coin_counter = NodePath("../../CoinsCounterDisplay")
+
+[node name="coin7" parent="Coins" node_paths=PackedStringArray("coin_counter") instance=ExtResource("6_qfnet")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 246, 106, 175.54994)
+coin_counter = NodePath("../../CoinsCounterDisplay")
+
+[node name="coin8" parent="Coins" node_paths=PackedStringArray("coin_counter") instance=ExtResource("6_qfnet")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 246, 106, 180.54994)
+coin_counter = NodePath("../../CoinsCounterDisplay")
+
+[node name="coin9" parent="Coins" node_paths=PackedStringArray("coin_counter") instance=ExtResource("6_qfnet")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 259, 106, 118.54994)
+coin_counter = NodePath("../../CoinsCounterDisplay")
+
+[node name="coin10" parent="Coins" node_paths=PackedStringArray("coin_counter") instance=ExtResource("6_qfnet")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 259, 106, 129.54994)
+coin_counter = NodePath("../../CoinsCounterDisplay")
+
+[node name="coin11" parent="Coins" node_paths=PackedStringArray("coin_counter") instance=ExtResource("6_qfnet")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 259, 106, 123.54994)
+coin_counter = NodePath("../../CoinsCounterDisplay")
+
+[node name="coin12" parent="Coins" node_paths=PackedStringArray("coin_counter") instance=ExtResource("6_qfnet")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 259, 106, 98.54994)
+coin_counter = NodePath("../../CoinsCounterDisplay")
+
+[node name="coin13" parent="Coins" node_paths=PackedStringArray("coin_counter") instance=ExtResource("6_qfnet")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 259, 106, 103.54994)
+coin_counter = NodePath("../../CoinsCounterDisplay")
+
+[node name="coin14" parent="Coins" node_paths=PackedStringArray("coin_counter") instance=ExtResource("6_qfnet")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 259, 106, 108.54994)
+coin_counter = NodePath("../../CoinsCounterDisplay")
+
+[node name="coin15" parent="Coins" node_paths=PackedStringArray("coin_counter") instance=ExtResource("6_qfnet")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 259, 106, 113.54994)
+coin_counter = NodePath("../../CoinsCounterDisplay")
+
+[node name="coin16" parent="Coins" node_paths=PackedStringArray("coin_counter") instance=ExtResource("6_qfnet")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 259, 106, 365.54993)
+coin_counter = NodePath("../../CoinsCounterDisplay")
+
+[node name="coin30" parent="Coins" node_paths=PackedStringArray("coin_counter") instance=ExtResource("6_qfnet")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 243, 106, 401.54993)
+coin_counter = NodePath("../../CoinsCounterDisplay")
+
+[node name="coin31" parent="Coins" node_paths=PackedStringArray("coin_counter") instance=ExtResource("6_qfnet")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 243, 106, 406.54993)
+coin_counter = NodePath("../../CoinsCounterDisplay")
+
+[node name="coin32" parent="Coins" node_paths=PackedStringArray("coin_counter") instance=ExtResource("6_qfnet")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 243, 106, 411.54993)
+coin_counter = NodePath("../../CoinsCounterDisplay")
+
+[node name="coin33" parent="Coins" node_paths=PackedStringArray("coin_counter") instance=ExtResource("6_qfnet")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 243, 106, 416.54993)
+coin_counter = NodePath("../../CoinsCounterDisplay")
+
+[node name="coin17" parent="Coins" node_paths=PackedStringArray("coin_counter") instance=ExtResource("6_qfnet")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 259, 106, 358.54993)
+coin_counter = NodePath("../../CoinsCounterDisplay")
+
+[node name="coin18" parent="Coins" node_paths=PackedStringArray("coin_counter") instance=ExtResource("6_qfnet")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 259, 106, 351.54993)
+coin_counter = NodePath("../../CoinsCounterDisplay")
+
+[node name="coin19" parent="Coins" node_paths=PackedStringArray("coin_counter") instance=ExtResource("6_qfnet")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 259, 106, 344.54993)
+coin_counter = NodePath("../../CoinsCounterDisplay")
+
+[node name="coin20" parent="Coins" node_paths=PackedStringArray("coin_counter") instance=ExtResource("6_qfnet")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 259, 106, 338.54993)
+coin_counter = NodePath("../../CoinsCounterDisplay")
+
+[node name="coin21" parent="Coins" node_paths=PackedStringArray("coin_counter") instance=ExtResource("6_qfnet")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 259, 106, 332.54993)
+coin_counter = NodePath("../../CoinsCounterDisplay")
+
+[node name="coin22" parent="Coins" node_paths=PackedStringArray("coin_counter") instance=ExtResource("6_qfnet")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 256, 106, 286.54993)
+coin_counter = NodePath("../../CoinsCounterDisplay")
+
+[node name="coin23" parent="Coins" node_paths=PackedStringArray("coin_counter") instance=ExtResource("6_qfnet")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 256, 106, 281.54993)
+coin_counter = NodePath("../../CoinsCounterDisplay")
+
+[node name="coin24" parent="Coins" node_paths=PackedStringArray("coin_counter") instance=ExtResource("6_qfnet")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 256, 106, 275.54993)
+coin_counter = NodePath("../../CoinsCounterDisplay")
+
+[node name="coin25" parent="Coins" node_paths=PackedStringArray("coin_counter") instance=ExtResource("6_qfnet")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 256, 106, 269.54993)
+coin_counter = NodePath("../../CoinsCounterDisplay")
+
+[node name="coin26" parent="Coins" node_paths=PackedStringArray("coin_counter") instance=ExtResource("6_qfnet")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 256, 106, 264.54993)
+coin_counter = NodePath("../../CoinsCounterDisplay")

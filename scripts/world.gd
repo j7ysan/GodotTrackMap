@@ -2,6 +2,7 @@ extends Node3D
 var size:Vector2i = Vector2(500,500)
 
 func _ready():
+	Global.coins = 0
 	#set up image and make black border
 	var noise_image:Image = $Noise.texture.noise.get_image(size.x,size.y,false,false,false)
 	for i in size.x:

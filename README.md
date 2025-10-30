@@ -35,7 +35,7 @@ progress markers such as, 1 - 0%, 2 - 25%, 3 - 50%, 4 - 75%, 5 - 100%, and perfe
 
 ---------------------------------------------------------
 # Feature-1 Creation: - Zoe Antonio
-The rain particle feature in was made using **GPUParticles3D** and **GPUParticlesCollision3DBox**. The GPUParticles3D node creates many small rain particles that fall from the sky, while the Collision3DBox determines how the rain interact with the ground. To make the rain look more realistic, I also added some by adjusting the 'WorldEnvironment'.
+The rain and snow particle feature was made using **GPUParticles3D** and **GPUParticlesCollision3DBox**. I used 2 GPUParticles3D nodes that creates many small rain and snow particles that fall from the sky in certain parts of the track, while the Collision3DBox determines how the rain interact with the ground. To make the weather look more realistic, I also added some fog by adjusting the 'WorldEnvironment' node.
 
 ---------------------------------------------------------
 # Features-2 Creation:

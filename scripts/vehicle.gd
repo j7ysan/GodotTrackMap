@@ -32,12 +32,12 @@ func _physics_process(delta):
 		brake = 0.25
 		engine_force = 0
 	
-	if position.y < 80:
+	if position.y < 50:
 		reset()
 
 func reset():
 	rotation = Vector3.ZERO
-	position = Vector3(250,105,65)
+	position = Vector3(250,65,65)
 
 func _input(event):
 	if Input.is_action_just_pressed("ui_accept"):

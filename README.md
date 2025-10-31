@@ -44,6 +44,7 @@ Most of this and the attached cameraparts can be seen under **VehicleBody3D** wh
 # Features Creation:
 ## Features Added (1): Rain, Snow, and Fog: Zoe
 The rain and snow particle feature was made using **GPUParticles3D** and **GPUParticlesCollision3DBox**. I used 2 GPUParticles3D nodes that creates many small rain and snow particles that fall from the sky in certain parts of the track, while the Collision3DBox determines how the rain interact with the ground. To make the weather look more realistic, I also added some fog by adjusting the 'WorldEnvironment' node.
+We later slightly adjusted the rain particle and expanded the snow particle to fit the theme we were trying to imagine a bit better, however the concepts that Zoe used were still implemented the exact same.
 
 ---------------------------------------------------------
 ## Features Added (2): Coin Collection: Zoe, Kiki

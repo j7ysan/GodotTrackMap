@@ -35,17 +35,17 @@ func _physics_process(delta):
 		brake = 0.25
 		engine_force = 0
 	# crash and drifting camera shake
-	var current_speed = linear_velocity.length()
+# 	var current_speed = linear_velocity.length()
 
 	# Sudden speed drop cause of the crash
-	if last_speed - current_speed > crash_shake_threshold:
-		$CameraFollow.apply_shake(0.25)
+# 	if last_speed - current_speed > crash_shake_threshold:
+# 		$CameraFollow.apply_shake(0.25)
 
 	# High angular velocity from drifting 
-	if abs(angular_velocity.y) > 2.5:
-		$CameraFollow.apply_shake(0.08)
+# 	if abs(angular_velocity.y) > 2.5:
+# 		$CameraFollow.apply_shake(0.08)
 
-	last_speed = current_speed
+# 	last_speed = current_speed
 	
 	if position.y < 50:
 		reset()

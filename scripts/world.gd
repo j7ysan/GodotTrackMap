@@ -124,6 +124,7 @@ func _on_finish_line_body_entered(body):
 			$UI/BestTime.text = "PB: %0.2f" % (Time.get_unix_time_from_system() - race_start) + "sec"
 			pb = Time.get_unix_time_from_system() - race_start
 		Global.coins = 0
+		race_start = Time.get_unix_time_from_system()
 		$UI.get_node("CoinsLabel").text = str(Global.coins) + " / 30"
 		for i in $Coins.get_children():
 			i.reset()

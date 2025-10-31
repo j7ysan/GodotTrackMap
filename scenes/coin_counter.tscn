@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://d3m0s1xfevnyb"]
+[gd_scene load_steps=6 format=3 uid="uid://d3m0s1xfevnyb"]
 
 [ext_resource type="Texture2D" uid="uid://d2ibrk881gdpd" path="res://resources/coins.png" id="1_dcv3c"]
 [ext_resource type="Script" uid="uid://dmqo6cuo0u8ku" path="res://scenes/coin_counter.gd" id="1_hh2am"]
@@ -11,40 +11,115 @@ corner_radius_top_right = 10
 corner_radius_bottom_right = 10
 corner_radius_bottom_left = 10
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hh2am"]
+bg_color = Color(1, 1, 1, 0.58431375)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
 [node name="CanvasLayer" type="CanvasLayer"]
 script = ExtResource("1_hh2am")
 
 [node name="Panel" type="Panel" parent="."]
-offset_left = 931.0
-offset_top = 43.0
-offset_right = 1113.0
-offset_bottom = 113.0
+offset_left = 880.0
+offset_top = 16.0
+offset_right = 1136.0
+offset_bottom = 80.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_quylx")
 
 [node name="TextureRect" type="TextureRect" parent="."]
-offset_left = 945.0
-offset_top = 58.0
-offset_right = 986.0
-offset_bottom = 99.0
+offset_left = 893.0
+offset_top = 28.0
+offset_right = 934.0
+offset_bottom = 69.0
 texture = ExtResource("1_dcv3c")
 expand_mode = 1
 
 [node name="Label" type="Label" parent="."]
-offset_left = 994.0
-offset_top = 58.0
-offset_right = 1034.0
-offset_bottom = 96.0
+offset_left = 942.0
+offset_top = 28.0
+offset_right = 982.0
+offset_bottom = 66.0
 theme_override_colors/font_color = Color(1, 1, 0.74509805, 1)
 theme_override_fonts/font = ExtResource("3_mp0xb")
 theme_override_font_sizes/font_size = 35
 text = "x"
 
 [node name="CoinsLabel" type="Label" parent="."]
-offset_left = 1027.0
-offset_top = 51.0
-offset_right = 1094.0
-offset_bottom = 100.0
+offset_left = 975.0
+offset_top = 21.0
+offset_right = 1042.0
+offset_bottom = 70.0
 theme_override_colors/font_color = Color(1, 1, 0.74509805, 1)
 theme_override_fonts/font = ExtResource("3_mp0xb")
 theme_override_font_sizes/font_size = 45
 text = "##"
+
+[node name="ProgressBar" type="ProgressBar" parent="."]
+offset_left = 880.0
+offset_top = 88.0
+offset_right = 1136.0
+offset_bottom = 144.0
+theme_override_colors/font_color = Color(1, 1, 0.74509805, 1)
+theme_override_fonts/font = ExtResource("3_mp0xb")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/background = SubResource("StyleBoxFlat_quylx")
+theme_override_styles/fill = SubResource("StyleBoxFlat_hh2am")
+
+[node name="Panel2" type="Panel" parent="."]
+offset_left = 880.0
+offset_top = 152.0
+offset_right = 1136.0
+offset_bottom = 216.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_quylx")
+
+[node name="BestTime" type="Label" parent="."]
+offset_left = 896.0
+offset_top = 152.0
+offset_right = 1136.0
+offset_bottom = 216.0
+theme_override_colors/font_color = Color(1, 1, 0.74509805, 1)
+theme_override_fonts/font = ExtResource("3_mp0xb")
+theme_override_font_sizes/font_size = 28
+text = "PB: N/A"
+vertical_alignment = 1
+
+[node name="Panel4" type="Panel" parent="."]
+offset_left = 880.0
+offset_top = 224.0
+offset_right = 1136.0
+offset_bottom = 288.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_quylx")
+
+[node name="Time" type="Label" parent="."]
+offset_left = 896.0
+offset_top = 224.0
+offset_right = 1136.0
+offset_bottom = 288.0
+theme_override_colors/font_color = Color(1, 1, 0.74509805, 1)
+theme_override_fonts/font = ExtResource("3_mp0xb")
+theme_override_font_sizes/font_size = 28
+text = "Time: N/A"
+vertical_alignment = 1
+
+[node name="Panel3" type="Panel" parent="."]
+offset_left = 880.0
+offset_top = 296.0
+offset_right = 1136.0
+offset_bottom = 416.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_quylx")
+
+[node name="Info" type="Label" parent="."]
+offset_left = 888.0
+offset_top = 296.0
+offset_right = 1151.0
+offset_bottom = 413.0
+theme_override_colors/font_color = Color(1, 1, 0.74509805, 1)
+theme_override_fonts/font = ExtResource("3_mp0xb")
+theme_override_font_sizes/font_size = 24
+text = "Get all coins and 
+finish the race!
+WASD/Arrows to move
+Enter to reset"
+vertical_alignment = 1

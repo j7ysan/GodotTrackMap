@@ -1,5 +1,4 @@
 extends CanvasLayer
 
-# Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	$CoinsLabel.text = str(0)
+	$CoinsLabel.text = "0 / 30"

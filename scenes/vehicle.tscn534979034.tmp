@@ -23,8 +23,6 @@ size = Vector3(3, 0.883, 6.328)
 size = Vector3(3, 0.883, 3.473)
 
 [node name="VehicleBody3D" type="VehicleBody3D"]
-collision_layer = 3
-collision_mask = 3
 mass = 240.0
 physics_material_override = SubResource("PhysicsMaterial_andsp")
 gravity_scale = 1.296

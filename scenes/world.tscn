@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://cnho7sngftoxj"]
+[gd_scene load_steps=22 format=3 uid="uid://cnho7sngftoxj"]
 
 [ext_resource type="Script" uid="uid://m88oep58i88q" path="res://scripts/world.gd" id="1_f3sb7"]
 [ext_resource type="Script" uid="uid://d2t357lekvvfd" path="res://scripts/camera_3d.gd" id="2_fj7yv"]
@@ -84,6 +84,17 @@ point_count = 20
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4mrxx"]
 albedo_texture = ExtResource("3_k0juu")
 uv1_scale = Vector3(1, 7.7, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7r4gi"]
+transparency = 1
+albedo_color = Color(0, 0, 1, 0.4117647)
+
+[sub_resource type="BoxMesh" id="BoxMesh_w7kh3"]
+material = SubResource("StandardMaterial3D_7r4gi")
+size = Vector3(0.35, 10, 25.15)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_4mrxx"]
+size = Vector3(0.35, 10, 25.15)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_i7141"]
 size = Vector3(45.620216, 24.768093, 1)
@@ -191,130 +202,130 @@ lifetime = 5.0
 process_material = SubResource("ParticleProcessMaterial_qfnet")
 draw_pass_1 = SubResource("QuadMesh_4mrxx")
 
-[node name="CoinsCounterDisplay" parent="." instance=ExtResource("7_i7141")]
+[node name="UI" parent="." instance=ExtResource("7_i7141")]
 
 [node name="Coins" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -40.090927, 0)
 
 [node name="coin" parent="Coins" node_paths=PackedStringArray("coin_counter") instance=ExtResource("6_qfnet")]
 transform = Transform3D(0.96532696, 0, -0.26104367, 0, 1, 0, 0.26104367, 0, 0.96532696, 353.12292, 105.063515, 234.62296)
-coin_counter = NodePath("../../CoinsCounterDisplay")
+coin_counter = NodePath("../../UI")
 
 [node name="coin2" parent="Coins" node_paths=PackedStringArray("coin_counter") instance=ExtResource("6_qfnet")]
 transform = Transform3D(0.95823777, 0, -0.2859727, 0, 1, 0, 0.2859727, 0, 0.95823777, 346.11862, 105.76389, 246.2656)
-coin_counter = NodePath("../../CoinsCounterDisplay")
+coin_counter = NodePath("../../UI")
 
 [node name="coin3" parent="Coins" node_paths=PackedStringArray("coin_counter") instance=ExtResource("6_qfnet")]
 transform = Transform3D(0.9571832, 0, -0.2894829, 0, 1, 0, 0.2894829, 0, 0.9571832, 338.15887, 105.57863, 256.66226)
-coin_counter = NodePath("../../CoinsCounterDisplay")
+coin_counter = NodePath("../../UI")
 
 [node name="coin4" parent="Coins" node_paths=PackedStringArray("coin_counter") instance=ExtResource("6_qfnet")]
 transform = Transform3D(0.9781331, 0, -0.20797998, 0, 1, 0, 0.20797998, 0, 0.9781331, 354.17993, 105.7428, 217.82642)
-coin_counter = NodePath("../../CoinsCounterDisplay")
+coin_counter = NodePath("../../UI")
 
 [node name="coin5" parent="Coins" node_paths=PackedStringArray("coin_counter") instance=ExtResource("6_qfnet")]
 transform = Transform3D(0.977787, 0, -0.20960152, 0, 1, 0, 0.20960152, 0, 0.977787, 342.9624, 106.185555, 227.43219)
-coin_counter = NodePath("../../CoinsCounterDisplay")
+coin_counter = NodePath("../../UI")
 
 [node name="coin6" parent="Coins" node_paths=PackedStringArray("coin_counter") instance=ExtResource("6_qfnet")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 356.5436, 104.85243, 182.72237)
-coin_counter = NodePath("../../CoinsCounterDisplay")
+coin_counter = NodePath("../../UI")
 
 [node name="coin7" parent="Coins" node_paths=PackedStringArray("coin_counter") instance=ExtResource("6_qfnet")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 347.12598, 105.7472, 193.06186)
-coin_counter = NodePath("../../CoinsCounterDisplay")
+coin_counter = NodePath("../../UI")
 
 [node name="coin8" parent="Coins" node_paths=PackedStringArray("coin_counter") instance=ExtResource("6_qfnet")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 355.55997, 104.732834, 203.22264)
-coin_counter = NodePath("../../CoinsCounterDisplay")
+coin_counter = NodePath("../../UI")
 
 [node name="coin9" parent="Coins" node_paths=PackedStringArray("coin_counter") instance=ExtResource("6_qfnet")]
 transform = Transform3D(0.5438044, 0, 0.83921194, 0, 1, 0, -0.83921194, 0, 0.5438044, 305.12778, 102.759735, 73.93468)
-coin_counter = NodePath("../../CoinsCounterDisplay")
+coin_counter = NodePath("../../UI")
 
 [node name="coin10" parent="Coins" node_paths=PackedStringArray("coin_counter") instance=ExtResource("6_qfnet")]
 transform = Transform3D(0.73911405, 0, 0.6735802, 0, 1, 0, -0.6735802, 0, 0.73911405, 317.08887, 102.77543, 82.6592)
-coin_counter = NodePath("../../CoinsCounterDisplay")
+coin_counter = NodePath("../../UI")
 
 [node name="coin11" parent="Coins" node_paths=PackedStringArray("coin_counter") instance=ExtResource("6_qfnet")]
 transform = Transform3D(0.4912079, 0, 0.8710425, 0, 1, 0, -0.8710425, 0, 0.4912079, 305.72916, 104.304436, 85.20548)
-coin_counter = NodePath("../../CoinsCounterDisplay")
+coin_counter = NodePath("../../UI")
 
 [node name="coin12" parent="Coins" node_paths=PackedStringArray("coin_counter") instance=ExtResource("6_qfnet")]
 transform = Transform3D(0.8334617, 0, 0.5525772, 0, 1, 0, -0.5525772, 0, 0.8334617, 315.68832, 104.08759, 93.829704)
-coin_counter = NodePath("../../CoinsCounterDisplay")
+coin_counter = NodePath("../../UI")
 
 [node name="coin13" parent="Coins" node_paths=PackedStringArray("coin_counter") instance=ExtResource("6_qfnet")]
 transform = Transform3D(0.4141532, 0, 0.91020715, 0, 1, 0, -0.91020715, 0, 0.4141532, 283.3743, 104.56333, 75.75179)
-coin_counter = NodePath("../../CoinsCounterDisplay")
+coin_counter = NodePath("../../UI")
 
 [node name="coin14" parent="Coins" node_paths=PackedStringArray("coin_counter") instance=ExtResource("6_qfnet")]
 transform = Transform3D(0.37985992, 0, 0.9250441, 0, 1, 0, -0.9250441, 0, 0.37985992, 289.53415, 102.94624, 67.804405)
-coin_counter = NodePath("../../CoinsCounterDisplay")
+coin_counter = NodePath("../../UI")
 
 [node name="coin15" parent="Coins" node_paths=PackedStringArray("coin_counter") instance=ExtResource("6_qfnet")]
 transform = Transform3D(0.44408792, 0, 0.89598316, 0, 1, 0, -0.89598316, 0, 0.44408792, 292.90817, 104.37805, 83.89431)
-coin_counter = NodePath("../../CoinsCounterDisplay")
+coin_counter = NodePath("../../UI")
 
 [node name="coin16" parent="Coins" node_paths=PackedStringArray("coin_counter") instance=ExtResource("6_qfnet")]
 transform = Transform3D(0.9259366, 0, 0.37767914, 0, 1, 0, -0.37767914, 0, 0.9259366, 168.36807, 105.09339, 331.39258)
-coin_counter = NodePath("../../CoinsCounterDisplay")
+coin_counter = NodePath("../../UI")
 
 [node name="coin30" parent="Coins" node_paths=PackedStringArray("coin_counter") instance=ExtResource("6_qfnet")]
 transform = Transform3D(0.98934114, 0, -0.14561683, 0, 1, 0, 0.14561683, 0, 0.98934114, 157.96718, 104.867584, 184.589)
-coin_counter = NodePath("../../CoinsCounterDisplay")
+coin_counter = NodePath("../../UI")
 
 [node name="coin31" parent="Coins" node_paths=PackedStringArray("coin_counter") instance=ExtResource("6_qfnet")]
 transform = Transform3D(0.9894754, 0, -0.14470161, 0, 1, 0, 0.14470161, 0, 0.9894754, 144.88925, 103.50141, 192.25224)
-coin_counter = NodePath("../../CoinsCounterDisplay")
+coin_counter = NodePath("../../UI")
 
 [node name="coin32" parent="Coins" node_paths=PackedStringArray("coin_counter") instance=ExtResource("6_qfnet")]
 transform = Transform3D(0.9931095, 0, -0.11719075, 0, 1, 0, 0.11719075, 0, 0.9931095, 152.35255, 105.7429, 205.4185)
-coin_counter = NodePath("../../CoinsCounterDisplay")
+coin_counter = NodePath("../../UI")
 
 [node name="coin33" parent="Coins" node_paths=PackedStringArray("coin_counter") instance=ExtResource("6_qfnet")]
 transform = Transform3D(0.996797, 0, -0.079972744, 0, 1, 0, 0.079972744, 0, 0.996797, 141.15439, 104.231186, 215.54674)
-coin_counter = NodePath("../../CoinsCounterDisplay")
+coin_counter = NodePath("../../UI")
 
 [node name="coin17" parent="Coins" node_paths=PackedStringArray("coin_counter") instance=ExtResource("6_qfnet")]
 transform = Transform3D(0.8803698, 0, 0.47428793, 0, 1, 0, -0.47428793, 0, 0.8803698, 175.59938, 106.1993, 318.45413)
-coin_counter = NodePath("../../CoinsCounterDisplay")
+coin_counter = NodePath("../../UI")
 
 [node name="coin18" parent="Coins" node_paths=PackedStringArray("coin_counter") instance=ExtResource("6_qfnet")]
 transform = Transform3D(0.93060297, 0, 0.36603022, 0, 1, 0, -0.36603022, 0, 0.93060297, 166.0455, 105.48563, 311.19803)
-coin_counter = NodePath("../../CoinsCounterDisplay")
+coin_counter = NodePath("../../UI")
 
 [node name="coin19" parent="Coins" node_paths=PackedStringArray("coin_counter") instance=ExtResource("6_qfnet")]
 transform = Transform3D(0.93060297, 0, 0.36603022, 0, 1, 0, -0.36603022, 0, 0.93060297, 168.43172, 106.26125, 298.80444)
-coin_counter = NodePath("../../CoinsCounterDisplay")
+coin_counter = NodePath("../../UI")
 
 [node name="coin20" parent="Coins" node_paths=PackedStringArray("coin_counter") instance=ExtResource("6_qfnet")]
 transform = Transform3D(0.96166956, 0, 0.27421096, 0, 1, 0, -0.27421096, 0, 0.96166956, 152.76082, 105.47718, 297.94626)
-coin_counter = NodePath("../../CoinsCounterDisplay")
+coin_counter = NodePath("../../UI")
 
 [node name="coin21" parent="Coins" node_paths=PackedStringArray("coin_counter") instance=ExtResource("6_qfnet")]
 transform = Transform3D(0.970817, 0, 0.23982139, 0, 1, 0, -0.23982139, 0, 0.970817, 159.84048, 106.12406, 283.94812)
-coin_counter = NodePath("../../CoinsCounterDisplay")
+coin_counter = NodePath("../../UI")
 
 [node name="coin22" parent="Coins" node_paths=PackedStringArray("coin_counter") instance=ExtResource("6_qfnet")]
 transform = Transform3D(0.47852325, 0, -0.8780749, 0, 1, 0, 0.8780749, 0, 0.47852325, 284.9194, 104.40726, 349.28644)
-coin_counter = NodePath("../../CoinsCounterDisplay")
+coin_counter = NodePath("../../UI")
 
 [node name="coin23" parent="Coins" node_paths=PackedStringArray("coin_counter") instance=ExtResource("6_qfnet")]
 transform = Transform3D(0.45187432, 0, -0.8920816, 0, 1, 0, 0.8920816, 0, 0.45187432, 283.10672, 105.89951, 336.99835)
-coin_counter = NodePath("../../CoinsCounterDisplay")
+coin_counter = NodePath("../../UI")
 
 [node name="coin24" parent="Coins" node_paths=PackedStringArray("coin_counter") instance=ExtResource("6_qfnet")]
 transform = Transform3D(0.54012287, 0, -0.84158623, 0, 1, 0, 0.84158623, 0, 0.54012287, 298.4774, 104.39252, 341.50006)
-coin_counter = NodePath("../../CoinsCounterDisplay")
+coin_counter = NodePath("../../UI")
 
 [node name="coin25" parent="Coins" node_paths=PackedStringArray("coin_counter") instance=ExtResource("6_qfnet")]
 transform = Transform3D(0.69455796, 0, -0.7194369, 0, 1, 0, 0.7194369, 0, 0.69455796, 295.7203, 105.546104, 327.6496)
-coin_counter = NodePath("../../CoinsCounterDisplay")
+coin_counter = NodePath("../../UI")
 
 [node name="coin26" parent="Coins" node_paths=PackedStringArray("coin_counter") instance=ExtResource("6_qfnet")]
 transform = Transform3D(0.7269103, 0, -0.6867322, 0, 1, 0, 0.6867322, 0, 0.7269103, 308.1023, 104.89571, 325.605)
-coin_counter = NodePath("../../CoinsCounterDisplay")
+coin_counter = NodePath("../../UI")
 
 [node name="Path3D" type="Path3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 280.06375, 76.479065, 68.901596)
@@ -336,6 +347,17 @@ path_continuous_u = true
 path_u_distance = 1.0
 path_joined = false
 material = SubResource("StandardMaterial3D_4mrxx")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Path3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -44.157608, -10.083038, 2.532219)
+mesh = SubResource("BoxMesh_w7kh3")
+
+[node name="FinishLine" type="Area3D" parent="Path3D/MeshInstance3D"]
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Path3D/MeshInstance3D/FinishLine"]
+shape = SubResource("BoxShape3D_4mrxx")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="."]
 
@@ -410,3 +432,5 @@ shape = SubResource("BoxShape3D_i7141")
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="StaticBody3D"]
 transform = Transform3D(0.93144375, 0, -0.36388534, 0, 1, 0, 0.36388534, 0, 0.93144375, 289.76025, 75.37892, 90.970985)
 shape = SubResource("BoxShape3D_i7141")
+
+[connection signal="body_entered" from="Path3D/MeshInstance3D/FinishLine" to="." method="_on_finish_line_body_entered"]

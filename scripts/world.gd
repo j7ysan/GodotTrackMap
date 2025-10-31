@@ -1,7 +1,12 @@
 extends Node3D
 var size:Vector2i = Vector2(500,500)
+@onready var race_path = $Path3D
+
+var race_start = Time.get_unix_time_from_system()
+var pb:float = -1
 
 func _ready():
+	print(race_start)
 	Global.coins = 0
 	#set up image and make black border
 	var noise_image:Image = $Noise.texture.noise.get_image(size.x,size.y,false,false,false)
@@ -103,3 +108,29 @@ func _physics_process(_delta):
 	if y: $Marker3D.position.z += y * 5
 	
 	$Marker3D.rotation.y += 0.0025
+	
+	var race_curve = race_path.curve
+	var race_length = race_curve.get_baked_length()
+	$UI/ProgressBar.value = (race_curve.get_closest_offset(race_path.to_local($VehicleBody3D.global_position)) / race_length) * 100
+	
+	$UI/Time.text = "%0.2f" % (Time.get_unix_time_from_system() - race_start)
+
+func _on_finish_line_body_entered(body):
+	if Global.coins >= 30:
+		if pb == -1:
+			$UI/BestTime.text = "PB: %0.2f" % (Time.get_unix_time_from_system() - race_start) + "sec"
+			pb = Time.get_unix_time_from_system() - race_start
+		elif pb > Time.get_unix_time_from_system() - race_start:
+			$UI/BestTime.text = "PB: %0.2f" % (Time.get_unix_time_from_system() - race_start) + "sec"
+			pb = Time.get_unix_time_from_system() - race_start
+		Global.coins = 0
+		$UI.get_node("CoinsLabel").text = str(Global.coins) + " / 30"
+		for i in $Coins.get_children():
+			i.reset()
+
+func reset():
+	race_start = Time.get_unix_time_from_system()
+	Global.coins = 0
+	$UI.get_node("CoinsLabel").text = str(Global.coins) + " / 30"
+	for i in $Coins.get_children():
+		i.reset()

@@ -34,26 +34,29 @@ func _physics_process(delta):
 	else:
 		brake = 0.25
 		engine_force = 0
+	
 	# crash and drifting camera shake
 # 	var current_speed = linear_velocity.length()
-
+	
 	# Sudden speed drop cause of the crash
 # 	if last_speed - current_speed > crash_shake_threshold:
 # 		$CameraFollow.apply_shake(0.25)
-
+	
 	# High angular velocity from drifting 
 # 	if abs(angular_velocity.y) > 2.5:
 # 		$CameraFollow.apply_shake(0.08)
-
-# 	last_speed = current_speed
 	
 	if position.y < 50:
 		reset()
 
-
 func reset():
-	rotation = Vector3.ZERO
-	position = Vector3(250,65,65)
+	get_parent().reset()
+	rotation = Vector3(0,-PI/2,0)
+	engine_force = 0
+	brake = 0
+	linear_velocity = Vector3.ZERO
+	angular_velocity = Vector3.ZERO
+	position = Vector3(235,65,80)
 
 func _input(_event):
 	if Input.is_action_just_pressed("ui_accept"):

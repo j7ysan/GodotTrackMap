@@ -201,6 +201,38 @@ lifetime = 5.0
 process_material = SubResource("ParticleProcessMaterial_qfnet")
 draw_pass_1 = SubResource("QuadMesh_4mrxx")
 
+[node name="SnowParticles3" type="GPUParticles3D" parent="."]
+transform = Transform3D(-0.9989355, -0.024141368, 0.039306387, -0.024571758, 0.99964285, -0.010503516, -0.039038785, -0.011458164, -0.99917215, 423.59653, 106.14195, 302.85712)
+custom_aabb = AABB(-1000, -1000, -1000, 2000, 2000, 2000)
+amount = 2000
+lifetime = 5.0
+process_material = SubResource("ParticleProcessMaterial_qfnet")
+draw_pass_1 = SubResource("QuadMesh_4mrxx")
+
+[node name="SnowParticles4" type="GPUParticles3D" parent="."]
+transform = Transform3D(-0.9989355, -0.024141368, 0.039306387, -0.024571758, 0.99964285, -0.010503516, -0.039038785, -0.011458164, -0.99917215, 423.59653, 106.14195, 142.64467)
+custom_aabb = AABB(-1000, -1000, -1000, 2000, 2000, 2000)
+amount = 2000
+lifetime = 5.0
+process_material = SubResource("ParticleProcessMaterial_qfnet")
+draw_pass_1 = SubResource("QuadMesh_4mrxx")
+
+[node name="SnowParticles5" type="GPUParticles3D" parent="."]
+transform = Transform3D(-0.9989355, -0.024141368, 0.039306387, -0.024571758, 0.99964285, -0.010503516, -0.039038785, -0.011458164, -0.99917215, 95.1099, 106.14195, 302.85712)
+custom_aabb = AABB(-1000, -1000, -1000, 2000, 2000, 2000)
+amount = 2000
+lifetime = 5.0
+process_material = SubResource("ParticleProcessMaterial_qfnet")
+draw_pass_1 = SubResource("QuadMesh_4mrxx")
+
+[node name="SnowParticles6" type="GPUParticles3D" parent="."]
+transform = Transform3D(-0.9989355, -0.024141368, 0.039306387, -0.024571758, 0.99964285, -0.010503516, -0.039038785, -0.011458164, -0.99917215, 95.1099, 106.14195, 142.64467)
+custom_aabb = AABB(-1000, -1000, -1000, 2000, 2000, 2000)
+amount = 2000
+lifetime = 5.0
+process_material = SubResource("ParticleProcessMaterial_qfnet")
+draw_pass_1 = SubResource("QuadMesh_4mrxx")
+
 [node name="CoinsCounterDisplay" parent="." instance=ExtResource("7_i7141")]
 
 [node name="Coins" type="Node3D" parent="."]

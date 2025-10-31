@@ -13,16 +13,18 @@ Assignment 2 for COMP 360 from Group 2.
 ## Creation and Node Usage: Jasan, Kiki
 The basis of creating the track relied greatly upon the use of spline curves and creating a simulated
 path from such curves and the use of the specific node like **Path3D**. By doing this and attaching a 3D 
-element we were able to create a generated track, the background of such being supported by a **MeshInstance3D2**
-for the addition of more depth and contrast to the track's slight texture - which was provided separately, using
-a stock image. This texture could also be later replaced with a shader to utilize more of the class features explored.
+element we were able to create a generated track. We applied a texture to the track to ensure that it would have
+visible distinction with the rest of the features we will be adding. However, the color of said track fits in nicely
+still with the rest of the environment that we are/were planning to set up.
 
 ---------------------------------------------------------
 ## Track Utilization: Jasan, Jason
-The track is used in a way so that the player is guided down a set path, one that is not too long and not too short.
-Along the track the transparent walls allow the player to look out onto the landscape whilst also performing the minigame
-at hand. During the minigame the track is used as a progression tool, with the individual node segments of the track acting as
-progress markers such as, 1 - 0%, 2 - 25%, 3 - 50%, 4 - 75%, 5 - 100%, and perfectly set up as to split it up in even segments.
+The track was first setup in a linear fashion. This was later adjusted as we realized it did not add much to the gameplay element of
+the systems we were creating. So it was later changed. We changed the track to run more in a loop and adjusted the collision mask accordingly
+around that instead of the method we were previously using we required **Path3D** and multiple instances of it. By doing this, it also lets the player
+experience 'fails' by falling off, to add some grace to this, we added 'inner walls' as a bit of a safety net. Now the track is fully able to be utilized for
+both racing needs, coin collection, and to showcase any other features as well. To ensure this we also expanded the snow particle limit to cover the new track 
+nearly fully.
 
 ---------------------------------------------------------
 # Car-Camera Creation: 

@@ -26,10 +26,10 @@ cellular_return_type = 0
 domain_warp_enabled = true
 
 [sub_resource type="NoiseTexture2D" id="NoiseTexture2D_tlwt5"]
+noise = SubResource("FastNoiseLite_tlwt5")
+color_ramp = SubResource("Gradient_gv5m4")
 seamless = true
 seamless_blend_skirt = 0.15
-color_ramp = SubResource("Gradient_gv5m4")
-noise = SubResource("FastNoiseLite_tlwt5")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fj7yv"]
 diffuse_mode = 1
@@ -205,26 +205,19 @@ material = SubResource("StandardMaterial3D_aqk2v")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 34.447052, 0)
 gravity_scale = 2.0
 
-[node name="CameraFollow" type="Camera3D" parent="VehicleBody3D" node_paths=PackedStringArray("car")]
+[node name="CameraFollow" type="Camera3D" parent="VehicleBody3D"]
 transform = Transform3D(-1, 1.51808e-08, -8.60946e-08, 0, 0.984808, 0.173648, 8.74228e-08, 0.173648, -0.984808, -0.5, 4.88, -12.244)
 current = true
-script = ExtResource("5_7r4gi")
-car = NodePath("..")
 
-[node name="CameraTopDown" type="Camera3D" parent="VehicleBody3D" node_paths=PackedStringArray("car")]
+[node name="CameraTopDown" type="Camera3D" parent="VehicleBody3D"]
 transform = Transform3D(-1, 1.51808e-08, -8.60946e-08, 0, 0.984808, 0.173648, 8.74228e-08, 0.173648, -0.984808, 0, 4.88, -12.244)
-script = ExtResource("5_4mrxx")
-car = NodePath("..")
+script = ExtResource("2_fj7yv")
 
-[node name="CameraCinematic" type="Camera3D" parent="VehicleBody3D" node_paths=PackedStringArray("car")]
+[node name="CameraCinematic" type="Camera3D" parent="VehicleBody3D"]
 transform = Transform3D(-1, 1.51808e-08, -8.60946e-08, 0, 0.984808, 0.173648, 8.74228e-08, 0.173648, -0.984808, -0.5, 4.88, -12.244)
-script = ExtResource("5_i7141")
-car = NodePath("..")
 
-[node name="CameraOrbit" type="Camera3D" parent="VehicleBody3D" node_paths=PackedStringArray("car")]
+[node name="CameraOrbit" type="Camera3D" parent="VehicleBody3D"]
 transform = Transform3D(-1, 1.51808e-08, -8.60946e-08, 0, 0.984808, 0.173648, 8.74228e-08, 0.173648, -0.984808, -0.5, 4.88, -12.244)
-script = ExtResource("5_qfnet")
-car = NodePath("..")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 20.310349, 0)

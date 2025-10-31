@@ -1,14 +1,12 @@
-[gd_scene load_steps=25 format=3 uid="uid://cnho7sngftoxj"]
+[gd_scene load_steps=30 format=3 uid="uid://cnho7sngftoxj"]
 
 [ext_resource type="Script" uid="uid://m88oep58i88q" path="res://scripts/world.gd" id="1_f3sb7"]
 [ext_resource type="Script" uid="uid://d2t357lekvvfd" path="res://scripts/camera_3d.gd" id="2_fj7yv"]
 [ext_resource type="Texture2D" uid="uid://cj8n2wp85xdwo" path="res://resources/track_texture2.jpg" id="3_k0juu"]
 [ext_resource type="PackedScene" uid="uid://c8pmqaww7dn0k" path="res://scenes/vehicle.tscn" id="4_aqk2v"]
-[ext_resource type="Script" uid="uid://bdgltj3biff86" path="res://scenes/camera_top_down.gd" id="5_4mrxx"]
-[ext_resource type="Script" uid="uid://bqjyt7b07j4xt" path="res://scenes/camera_follow.gd" id="5_7r4gi"]
-[ext_resource type="Script" uid="uid://m5hpmakbyyl6" path="res://scenes/camera_manager.gd" id="5_71j4m"]
-[ext_resource type="Script" uid="uid://d2d4iijxuglfw" path="res://scenes/camera_cinematic.gd" id="5_i7141"]
-[ext_resource type="Script" uid="uid://d2v2d081hf67v" path="res://scenes/camera_orbit.gd" id="5_qfnet"]
+[ext_resource type="Texture2D" uid="uid://cltvyp62qhwfv" path="res://resources/snowflake.png" id="5_71j4m"]
+[ext_resource type="PackedScene" uid="uid://ith22phhte41" path="res://scenes/coin.tscn" id="6_qfnet"]
+[ext_resource type="PackedScene" uid="uid://d3m0s1xfevnyb" path="res://scenes/coin_counter.tscn" id="7_i7141"]
 
 [sub_resource type="Gradient" id="Gradient_gv5m4"]
 offsets = PackedFloat32Array(0, 0.586667, 1)
@@ -49,6 +47,7 @@ ambient_light_color = Color(1, 1, 1, 1)
 sdfgi_use_occlusion = true
 glow_intensity = 6.39
 glow_hdr_threshold = 0.0
+fog_enabled = true
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_fj7yv"]
 
@@ -91,6 +90,54 @@ albedo_color = Color(0.329412, 0.329412, 0.329412, 0.117647)
 [sub_resource type="BoxShape3D" id="BoxShape3D_71j4m"]
 size = Vector3(1, 27.2189, 390.896)
 
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_k0juu"]
+emission_shape = 3
+emission_box_extents = Vector3(100, 1, 80)
+direction = Vector3(1, -1, 0)
+spread = 5.0
+initial_velocity_min = 5.0
+initial_velocity_max = 5.0
+
+[sub_resource type="Curve" id="Curve_71j4m"]
+_limits = [0.0, 0.1, 0.0, 1.0]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(1e-05, 0.1), 0.3624392, 0.3624392, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qfnet"]
+transparency = 1
+cull_mode = 2
+shading_mode = 0
+vertex_color_use_as_albedo = true
+use_particle_trails = true
+
+[sub_resource type="RibbonTrailMesh" id="RibbonTrailMesh_i7141"]
+material = SubResource("StandardMaterial3D_qfnet")
+curve = SubResource("Curve_71j4m")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_qfnet"]
+emission_shape = 3
+emission_box_extents = Vector3(100, 1, 80)
+angle_min = 1.0728835e-05
+angle_max = 360.00003
+direction = Vector3(1, -1, 0)
+initial_velocity_min = 10.0
+initial_velocity_max = 20.0
+angular_velocity_min = 29.999983
+angular_velocity_max = 49.99998
+linear_accel_min = 0.99999774
+linear_accel_max = 9.999997
+scale_min = 0.5
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_i7141"]
+transparency = 1
+shading_mode = 0
+albedo_texture = ExtResource("5_71j4m")
+billboard_mode = 1
+billboard_keep_scale = true
+
+[sub_resource type="QuadMesh" id="QuadMesh_4mrxx"]
+material = SubResource("StandardMaterial3D_i7141")
+
 [node name="World" type="Node3D"]
 script = ExtResource("1_f3sb7")
 
@@ -102,6 +149,10 @@ texture = SubResource("NoiseTexture2D_tlwt5")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 material_overlay = SubResource("StandardMaterial3D_fj7yv")
+
+[node name="GPUParticlesCollisionBox3D" type="GPUParticlesCollisionBox3D" parent="MeshInstance3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 244.31209, 127.73365, 260.2429)
+size = Vector3(300, 200, 400)
 
 [node name="Marker3D" type="Marker3D" parent="."]
 transform = Transform3D(0.523986, 0.851727, 0, -0.851727, 0.523986, 0, 0, 0, 1, 0, 0, 0)
@@ -125,13 +176,13 @@ directional_shadow_blend_splits = true
 environment = SubResource("Environment_fj7yv")
 
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
-transform = Transform3D(25, 0, 0, 0, 1, 0, 0, 0, 197, 249.853, 101.307, 251.628)
+transform = Transform3D(25, 0, 0, 0, 1, 0, 0, 0, 197, 249.85297, 60.86705, 251.62827)
 top_level = true
 mesh = SubResource("PlaneMesh_fj7yv")
 surface_material_override/0 = SubResource("StandardMaterial3D_tlwt5")
 
 [node name="Path3D" type="Path3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 250.438, 105.823, 254.594)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 250.438, 85.7, 254.594)
 curve = SubResource("Curve3D_fj7yv")
 
 [node name="CSGPolygon3D" type="CSGPolygon3D" parent="Path3D"]
@@ -151,7 +202,7 @@ path_joined = true
 material = SubResource("StandardMaterial3D_aqk2v")
 
 [node name="VehicleBody3D" parent="." instance=ExtResource("4_aqk2v")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 116.235, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 34.447052, 0)
 gravity_scale = 2.0
 
 [node name="CameraFollow" type="Camera3D" parent="VehicleBody3D" node_paths=PackedStringArray("car")]
@@ -176,7 +227,7 @@ script = ExtResource("5_qfnet")
 car = NodePath("..")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 60.75, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 20.310349, 0)
 physics_material_override = SubResource("PhysicsMaterial_aqk2v")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
@@ -184,7 +235,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 250.562, 42.6945, 251.118)
 shape = SubResource("BoxShape3D_036b0")
 
 [node name="Path3D2" type="Path3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 204, 105.271, 434.408)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 203.99957, 64.83151, 434.40802)
 curve = SubResource("Curve3D_k0juu")
 
 [node name="CSGPolygon3D" type="CSGPolygon3D" parent="Path3D2"]
@@ -204,7 +255,7 @@ path_joined = false
 material = SubResource("StandardMaterial3D_71j4m")
 
 [node name="StaticBody3D2" type="StaticBody3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 50, 70, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 50, 29.560349, 0)
 physics_material_override = SubResource("PhysicsMaterial_k0juu")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D2"]
@@ -223,10 +274,146 @@ shape = SubResource("BoxShape3D_71j4m")
 transform = Transform3D(-0.00715576, 0, 0.999974, 0, 1, 0, -0.999974, 0, -0.00715576, 203.475, 48.1213, 57.4462)
 shape = SubResource("BoxShape3D_71j4m")
 
-[node name="CameraManager" type="Node" parent="." node_paths=PackedStringArray("car", "camera_follow", "camera_topdown", "camera_cinematic", "camera_orbit")]
-script = ExtResource("5_71j4m")
-car = NodePath("../VehicleBody3D")
-camera_follow = NodePath("../VehicleBody3D/CameraFollow")
-camera_topdown = NodePath("../VehicleBody3D/CameraTopDown")
-camera_cinematic = NodePath("../VehicleBody3D/CameraCinematic")
-camera_orbit = NodePath("../VehicleBody3D/CameraOrbit")
+[node name="RainParticles" type="GPUParticles3D" parent="."]
+transform = Transform3D(0.9986722, -0.03307447, 0.039504092, 0.03263997, 0.99940044, 0.011593692, -0.03986384, -0.010288893, 0.9991524, 254.21518, 112.478, 164.16986)
+custom_aabb = AABB(-1000, -1000, -1000, 2000, 2000, 2000)
+amount = 1000
+lifetime = 3.0
+randomness = 0.87
+trail_enabled = true
+trail_lifetime = 0.2
+process_material = SubResource("ParticleProcessMaterial_k0juu")
+draw_pass_1 = SubResource("RibbonTrailMesh_i7141")
+
+[node name="SnowParticles" type="GPUParticles3D" parent="."]
+transform = Transform3D(-0.9989355, -0.024141368, 0.039306387, -0.024571758, 0.99964285, -0.010503516, -0.039038785, -0.011458164, -0.99917215, 249.12372, 106.14195, 313.55695)
+custom_aabb = AABB(-1000, -1000, -1000, 2000, 2000, 2000)
+amount = 2000
+lifetime = 5.0
+process_material = SubResource("ParticleProcessMaterial_qfnet")
+draw_pass_1 = SubResource("QuadMesh_4mrxx")
+
+[node name="CoinsCounterDisplay" parent="." instance=ExtResource("7_i7141")]
+
+[node name="Coins" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -40.090927, 0)
+
+[node name="coin" parent="Coins" node_paths=PackedStringArray("coin_counter") instance=ExtResource("6_qfnet")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 246, 106, 209)
+coin_counter = NodePath("../../CoinsCounterDisplay")
+
+[node name="coin2" parent="Coins" node_paths=PackedStringArray("coin_counter") instance=ExtResource("6_qfnet")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 246, 106, 202.54994)
+coin_counter = NodePath("../../CoinsCounterDisplay")
+
+[node name="coin3" parent="Coins" node_paths=PackedStringArray("coin_counter") instance=ExtResource("6_qfnet")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 246, 106, 196.54994)
+coin_counter = NodePath("../../CoinsCounterDisplay")
+
+[node name="coin4" parent="Coins" node_paths=PackedStringArray("coin_counter") instance=ExtResource("6_qfnet")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 246, 106, 191.54994)
+coin_counter = NodePath("../../CoinsCounterDisplay")
+
+[node name="coin5" parent="Coins" node_paths=PackedStringArray("coin_counter") instance=ExtResource("6_qfnet")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 246, 106, 185.54994)
+coin_counter = NodePath("../../CoinsCounterDisplay")
+
+[node name="coin6" parent="Coins" node_paths=PackedStringArray("coin_counter") instance=ExtResource("6_qfnet")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 246, 106, 170.54994)
+coin_counter = NodePath("../../CoinsCounterDisplay")
+
+[node name="coin7" parent="Coins" node_paths=PackedStringArray("coin_counter") instance=ExtResource("6_qfnet")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 246, 106, 175.54994)
+coin_counter = NodePath("../../CoinsCounterDisplay")
+
+[node name="coin8" parent="Coins" node_paths=PackedStringArray("coin_counter") instance=ExtResource("6_qfnet")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 246, 106, 180.54994)
+coin_counter = NodePath("../../CoinsCounterDisplay")
+
+[node name="coin9" parent="Coins" node_paths=PackedStringArray("coin_counter") instance=ExtResource("6_qfnet")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 259, 106, 118.54994)
+coin_counter = NodePath("../../CoinsCounterDisplay")
+
+[node name="coin10" parent="Coins" node_paths=PackedStringArray("coin_counter") instance=ExtResource("6_qfnet")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 259, 106, 129.54994)
+coin_counter = NodePath("../../CoinsCounterDisplay")
+
+[node name="coin11" parent="Coins" node_paths=PackedStringArray("coin_counter") instance=ExtResource("6_qfnet")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 259, 106, 123.54994)
+coin_counter = NodePath("../../CoinsCounterDisplay")
+
+[node name="coin12" parent="Coins" node_paths=PackedStringArray("coin_counter") instance=ExtResource("6_qfnet")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 259, 106, 98.54994)
+coin_counter = NodePath("../../CoinsCounterDisplay")
+
+[node name="coin13" parent="Coins" node_paths=PackedStringArray("coin_counter") instance=ExtResource("6_qfnet")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 259, 106, 103.54994)
+coin_counter = NodePath("../../CoinsCounterDisplay")
+
+[node name="coin14" parent="Coins" node_paths=PackedStringArray("coin_counter") instance=ExtResource("6_qfnet")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 259, 106, 108.54994)
+coin_counter = NodePath("../../CoinsCounterDisplay")
+
+[node name="coin15" parent="Coins" node_paths=PackedStringArray("coin_counter") instance=ExtResource("6_qfnet")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 259, 106, 113.54994)
+coin_counter = NodePath("../../CoinsCounterDisplay")
+
+[node name="coin16" parent="Coins" node_paths=PackedStringArray("coin_counter") instance=ExtResource("6_qfnet")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 259, 106, 365.54993)
+coin_counter = NodePath("../../CoinsCounterDisplay")
+
+[node name="coin30" parent="Coins" node_paths=PackedStringArray("coin_counter") instance=ExtResource("6_qfnet")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 243, 106, 401.54993)
+coin_counter = NodePath("../../CoinsCounterDisplay")
+
+[node name="coin31" parent="Coins" node_paths=PackedStringArray("coin_counter") instance=ExtResource("6_qfnet")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 243, 106, 406.54993)
+coin_counter = NodePath("../../CoinsCounterDisplay")
+
+[node name="coin32" parent="Coins" node_paths=PackedStringArray("coin_counter") instance=ExtResource("6_qfnet")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 243, 106, 411.54993)
+coin_counter = NodePath("../../CoinsCounterDisplay")
+
+[node name="coin33" parent="Coins" node_paths=PackedStringArray("coin_counter") instance=ExtResource("6_qfnet")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 243, 106, 416.54993)
+coin_counter = NodePath("../../CoinsCounterDisplay")
+
+[node name="coin17" parent="Coins" node_paths=PackedStringArray("coin_counter") instance=ExtResource("6_qfnet")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 259, 106, 358.54993)
+coin_counter = NodePath("../../CoinsCounterDisplay")
+
+[node name="coin18" parent="Coins" node_paths=PackedStringArray("coin_counter") instance=ExtResource("6_qfnet")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 259, 106, 351.54993)
+coin_counter = NodePath("../../CoinsCounterDisplay")
+
+[node name="coin19" parent="Coins" node_paths=PackedStringArray("coin_counter") instance=ExtResource("6_qfnet")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 259, 106, 344.54993)
+coin_counter = NodePath("../../CoinsCounterDisplay")
+
+[node name="coin20" parent="Coins" node_paths=PackedStringArray("coin_counter") instance=ExtResource("6_qfnet")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 259, 106, 338.54993)
+coin_counter = NodePath("../../CoinsCounterDisplay")
+
+[node name="coin21" parent="Coins" node_paths=PackedStringArray("coin_counter") instance=ExtResource("6_qfnet")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 259, 106, 332.54993)
+coin_counter = NodePath("../../CoinsCounterDisplay")
+
+[node name="coin22" parent="Coins" node_paths=PackedStringArray("coin_counter") instance=ExtResource("6_qfnet")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 256, 106, 286.54993)
+coin_counter = NodePath("../../CoinsCounterDisplay")
+
+[node name="coin23" parent="Coins" node_paths=PackedStringArray("coin_counter") instance=ExtResource("6_qfnet")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 256, 106, 281.54993)
+coin_counter = NodePath("../../CoinsCounterDisplay")
+
+[node name="coin24" parent="Coins" node_paths=PackedStringArray("coin_counter") instance=ExtResource("6_qfnet")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 256, 106, 275.54993)
+coin_counter = NodePath("../../CoinsCounterDisplay")
+
+[node name="coin25" parent="Coins" node_paths=PackedStringArray("coin_counter") instance=ExtResource("6_qfnet")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 256, 106, 269.54993)
+coin_counter = NodePath("../../CoinsCounterDisplay")
+
+[node name="coin26" parent="Coins" node_paths=PackedStringArray("coin_counter") instance=ExtResource("6_qfnet")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 256, 106, 264.54993)
+coin_counter = NodePath("../../CoinsCounterDisplay")

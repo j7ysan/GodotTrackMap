@@ -9,7 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://d3m0s1xfevnyb" path="res://scenes/coin_counter.tscn" id="7_i7141"]
 
 [sub_resource type="Gradient" id="Gradient_gv5m4"]
-offsets = PackedFloat32Array(0, 0.58666664, 1)
+offsets = PackedFloat32Array(0, 0.586667, 1)
 colors = PackedColorArray(0, 0, 0, 1, 0.26, 0.26, 0.26, 1, 1, 1, 1, 1)
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_tlwt5"]
@@ -26,10 +26,10 @@ cellular_return_type = 0
 domain_warp_enabled = true
 
 [sub_resource type="NoiseTexture2D" id="NoiseTexture2D_tlwt5"]
-noise = SubResource("FastNoiseLite_tlwt5")
-color_ramp = SubResource("Gradient_gv5m4")
 seamless = true
 seamless_blend_skirt = 0.15
+color_ramp = SubResource("Gradient_gv5m4")
+noise = SubResource("FastNoiseLite_tlwt5")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fj7yv"]
 diffuse_mode = 1
@@ -54,12 +54,12 @@ fog_enabled = true
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tlwt5"]
 transparency = 1
 diffuse_mode = 1
-albedo_color = Color(0, 0, 0, 0.88235295)
+albedo_color = Color(0, 0, 0, 0.882353)
 
 [sub_resource type="Curve3D" id="Curve3D_fj7yv"]
 closed = true
 _data = {
-"points": PackedVector3Array(0, 0, 0, 0, 0, 0, -2.753006, 3.0517578e-05, -198.61746, -0.5243683, 0.015731812, -0.19747925, 0.5243683, -0.015731812, 0.19747925, -2.753006, 3.0517578e-05, -110.709305, 0, 0, 0, 0, 0, 0, -1.8978424, 3.0517578e-05, -16.614136, 0, 0, 0, 0, 0, 0, -2.7640228, 0.05015564, 83.10803, 0, 0, 0, 0, 0, 0, -1.770813, 0.0688324, 189.732),
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, -2.75301, 3.05176e-05, -198.617, -0.524368, 0.0157318, -0.197479, 0.524368, -0.0157318, 0.197479, -2.75301, 3.05176e-05, -110.709, 0, 0, 0, 0, 0, 0, -1.89784, 3.05176e-05, -16.6141, 0, 0, 0, 0, 0, 0, -2.76402, 0.0501556, 83.108, 0, 0, 0, 0, 0, 0, -1.77081, 0.0688324, 189.732),
 "tilts": PackedFloat32Array(0, 0, 0, 0, 0)
 }
 point_count = 5
@@ -71,24 +71,24 @@ uv1_scale = Vector3(0, 9, 0)
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_aqk2v"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_036b0"]
-size = Vector3(42.57738, 1, 388.3324)
+size = Vector3(42.5774, 1, 388.332)
 
 [sub_resource type="Curve3D" id="Curve3D_k0juu"]
 closed = true
 _data = {
-"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 26.21466, -2.216919, 12.104309, 0, 0, 0, 0, 0, 0, 26.071915, -1.7997437, -49.220917, 0, 0, 0, 0, 0, 0, 25.52951, -2.0417786, -144.8382, 0, 0, 0, 0, 0, 0, 26.049713, -1.9278793, -246.35815, 0, 0, 0, 0, 0, 0, 25.951157, -2.0857391, -322.95313, 0, 0, 0, 0, 0, 0, 25.537262, -2.7324142, -378.12033, 0, 0, 0, 0, 0, 0, 65.34589, -2.2725677, -377.86423, 0, 0, 0, 0, 0, 0, 66.24649, -1.6685181, -322.5426, 0, 0, 0, 0, 0, 0, 66.87076, -1.4006424, -246.5242, 0, 0, 0, 0, 0, 0, 67.41672, -0.996048, -146.51492, 0, 0, 0, 0, 0, 0, 66.44931, -1.8476563, -50.526123, 0, 0, 0, 0, 0, 0, 66.28824, -2.8183594, 12.432037),
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 26.2147, -2.21692, 12.1043, 0, 0, 0, 0, 0, 0, 26.0719, -1.79974, -49.2209, 0, 0, 0, 0, 0, 0, 25.5295, -2.04178, -144.838, 0, 0, 0, 0, 0, 0, 26.0497, -1.92788, -246.358, 0, 0, 0, 0, 0, 0, 25.9512, -2.08574, -322.953, 0, 0, 0, 0, 0, 0, 25.5373, -2.73241, -378.12, 0, 0, 0, 0, 0, 0, 65.3459, -2.27257, -377.864, 0, 0, 0, 0, 0, 0, 66.2465, -1.66852, -322.543, 0, 0, 0, 0, 0, 0, 66.8708, -1.40064, -246.524, 0, 0, 0, 0, 0, 0, 67.4167, -0.996048, -146.515, 0, 0, 0, 0, 0, 0, 66.4493, -1.84766, -50.5261, 0, 0, 0, 0, 0, 0, 66.2882, -2.81836, 12.432),
 "tilts": PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
 }
 point_count = 12
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_71j4m"]
 transparency = 1
-albedo_color = Color(0.32941177, 0.32941177, 0.32941177, 0.11764706)
+albedo_color = Color(0.329412, 0.329412, 0.329412, 0.117647)
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_k0juu"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_71j4m"]
-size = Vector3(1, 27.218872, 390.89642)
+size = Vector3(1, 27.2189, 390.896)
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_k0juu"]
 emission_shape = 3
@@ -155,10 +155,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 244.31209, 127.73365, 260.242
 size = Vector3(300, 200, 400)
 
 [node name="Marker3D" type="Marker3D" parent="."]
-transform = Transform3D(0.52398586, 0.85172695, 0, -0.85172695, 0.52398586, 0, 0, 0, 1, 0, 0, 0)
+transform = Transform3D(0.523986, 0.851727, 0, -0.851727, 0.523986, 0, 0, 0, 1, 0, 0, 0)
 
 [node name="Camera3D" type="Camera3D" parent="Marker3D"]
-transform = Transform3D(-4.371139e-08, -1, -4.371139e-08, 0, -4.371139e-08, 1, -1, 4.371139e-08, 1.9106855e-15, 0, 1250, 0)
+transform = Transform3D(-4.37114e-08, -1, -4.37114e-08, 0, -4.37114e-08, 1, -1, 4.37114e-08, 1.91069e-15, 0, 1250, 0)
 fov = 29.7
 size = 755.69
 far = 6440.2
@@ -166,7 +166,7 @@ script = ExtResource("2_fj7yv")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="Marker3D/Camera3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 10, 0)
-light_color = Color(0.9254902, 0.9254902, 0.5176471, 1)
+light_color = Color(0.92549, 0.92549, 0.517647, 1)
 light_energy = 0.42
 light_volumetric_fog_energy = 1.77
 directional_shadow_mode = 1
@@ -186,7 +186,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 250.438, 85.7, 254.594)
 curve = SubResource("Curve3D_fj7yv")
 
 [node name="CSGPolygon3D" type="CSGPolygon3D" parent="Path3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -248.46011, -107.74036, -253.34836)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -248.46, -107.74, -253.348)
 polygon = PackedVector2Array(-20, 0, -1, 0.1, 1, 0.1, 1, 0)
 mode = 2
 path_node = NodePath("..")
@@ -205,16 +205,33 @@ material = SubResource("StandardMaterial3D_aqk2v")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 34.447052, 0)
 gravity_scale = 2.0
 
-[node name="Camera3D" type="Camera3D" parent="VehicleBody3D"]
-transform = Transform3D(-1, 1.5180806e-08, -8.609462e-08, 0, 0.9848077, 0.17364818, 8.742278e-08, 0.17364818, -0.9848077, -0.5, 4.88, -12.244)
+[node name="CameraFollow" type="Camera3D" parent="VehicleBody3D" node_paths=PackedStringArray("car")]
+transform = Transform3D(-1, 1.51808e-08, -8.60946e-08, 0, 0.984808, 0.173648, 8.74228e-08, 0.173648, -0.984808, -0.5, 4.88, -12.244)
 current = true
+script = ExtResource("5_7r4gi")
+car = NodePath("..")
+
+[node name="CameraTopDown" type="Camera3D" parent="VehicleBody3D" node_paths=PackedStringArray("car")]
+transform = Transform3D(-1, 1.51808e-08, -8.60946e-08, 0, 0.984808, 0.173648, 8.74228e-08, 0.173648, -0.984808, 0, 4.88, -12.244)
+script = ExtResource("5_4mrxx")
+car = NodePath("..")
+
+[node name="CameraCinematic" type="Camera3D" parent="VehicleBody3D" node_paths=PackedStringArray("car")]
+transform = Transform3D(-1, 1.51808e-08, -8.60946e-08, 0, 0.984808, 0.173648, 8.74228e-08, 0.173648, -0.984808, -0.5, 4.88, -12.244)
+script = ExtResource("5_i7141")
+car = NodePath("..")
+
+[node name="CameraOrbit" type="Camera3D" parent="VehicleBody3D" node_paths=PackedStringArray("car")]
+transform = Transform3D(-1, 1.51808e-08, -8.60946e-08, 0, 0.984808, 0.173648, 8.74228e-08, 0.173648, -0.984808, -0.5, 4.88, -12.244)
+script = ExtResource("5_qfnet")
+car = NodePath("..")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 20.310349, 0)
 physics_material_override = SubResource("PhysicsMaterial_aqk2v")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 250.56215, 42.694527, 251.11813)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 250.562, 42.6945, 251.118)
 shape = SubResource("BoxShape3D_036b0")
 
 [node name="Path3D2" type="Path3D" parent="."]
@@ -222,7 +239,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 203.99957, 64.83151, 434.4080
 curve = SubResource("Curve3D_k0juu")
 
 [node name="CSGPolygon3D" type="CSGPolygon3D" parent="Path3D2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -203.80959, -105.421616, -434.50165)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -203.81, -105.422, -434.502)
 polygon = PackedVector2Array(0, 0, 0, 0, 0, 25, 1, 0)
 mode = 2
 path_node = NodePath("..")
@@ -242,19 +259,19 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 50, 29.560349, 0)
 physics_material_override = SubResource("PhysicsMaterial_k0juu")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 179.91873, 47.893433, 251.21738)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 179.919, 47.8934, 251.217)
 shape = SubResource("BoxShape3D_71j4m")
 
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="StaticBody3D2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 219.11264, 47.893433, 251.93134)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 219.113, 47.8934, 251.931)
 shape = SubResource("BoxShape3D_71j4m")
 
 [node name="CollisionShape3D3" type="CollisionShape3D" parent="StaticBody3D2"]
-transform = Transform3D(-0.007155759, 0, 0.99997437, 0, 1, 0, -0.99997437, 0, -0.007155759, 203.47473, 48.121292, 447.4622)
+transform = Transform3D(-0.00715576, 0, 0.999974, 0, 1, 0, -0.999974, 0, -0.00715576, 203.475, 48.1213, 447.462)
 shape = SubResource("BoxShape3D_71j4m")
 
 [node name="CollisionShape3D4" type="CollisionShape3D" parent="StaticBody3D2"]
-transform = Transform3D(-0.007155759, 0, 0.99997437, 0, 1, 0, -0.99997437, 0, -0.007155759, 203.47473, 48.121292, 57.4462)
+transform = Transform3D(-0.00715576, 0, 0.999974, 0, 1, 0, -0.999974, 0, -0.00715576, 203.475, 48.1213, 57.4462)
 shape = SubResource("BoxShape3D_71j4m")
 
 [node name="RainParticles" type="GPUParticles3D" parent="."]
